@@ -1,11 +1,16 @@
-<style>
-/* Для всех экранов */
-.interacty_padding {
-    position: relative;
-    padding: 56.25% 0 0 0; /* Соотношение сторон 16:9 */
-}
+<div class="interacty_padding" style="position: relative; padding: 99.5% 0 0 0;">
+    <div class="interacty_wrapper" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center;">
+        <iframe style="border: none; width: 100%; height: 100%;" src="https://p.interacty.me/d069137af425969d/iframe.html"></iframe>
+    </div>
+</div>
 
-.interacty_wrapper {
+<style>
+  /* Общий стиль для всех устройств */
+  .interacty_padding {
+    position: relative;
+    padding: 56.25% 0 0 0; /* Соотношение сторон 16:9 для iframe */
+  }
+  .interacty_wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,31 +18,23 @@
     height: 100%;
     display: flex;
     justify-content: center;
-}
-
-iframe {
+  }
+  iframe {
     border: none;
     width: 100%;
     height: 100%;
-}
+  }
 
-/* Адаптация для экранов меньше 768px (например, планшеты) */
-@media only screen and (max-width: 768px) {
+  /* Медиа-запросы для адаптации под мобильные устройства */
+  @media only screen and (max-width: 600px) {
     .interacty_padding {
-        padding: 75% 0 0 0; /* Соотношение сторон 4:3 для планшетов */
+      padding: 75% 0 0 0; /* Соотношение сторон 4:3 для мобильных устройств */
     }
-}
-
-/* Адаптация для экранов меньше 480px (например, смартфоны) */
-@media only screen and (max-width: 480px) {
-    .interacty_padding {
-        padding: 100% 0 0 0; /* Соотношение сторон 1:1 для смартфонов */
+    .interacty_wrapper {
+      height: auto; /* Подстройка высоты под мобильные */
     }
-}
+    iframe {
+      height: auto; /* Автоматическая подгонка высоты */
+    }
+  }
 </style>
-
-<div class="interacty_padding">
-    <div class="interacty_wrapper">
-        <iframe src="https://p.interacty.me/d069137af425969d/iframe.html"></iframe>
-    </div>
-</div>
